@@ -1,0 +1,33 @@
+<head>
+	<title>Live-Chatstreams-Meteor</title>
+</head>
+
+<body>
+	{{> loginButtons}}
+	{{> hello}}
+	{{> main}}
+	{{> stream}}
+</body>
+
+<template name="hello">
+	<h1>{{greeting}}</h1>
+</template>
+
+<template name="main">
+		<input type="text"/>
+</template>
+
+<template name="stream">
+	{{#each findAll}}
+
+		<p><b style="color:{{makeColor user}}">{{user}}</b>: {{message}}
+
+		{{#if done}}
+		{{else}}
+		...
+		{{/if}}
+
+		<small><small>({{timeFormat time}})</small></small></p>
+
+	{{/each}}
+</template>
